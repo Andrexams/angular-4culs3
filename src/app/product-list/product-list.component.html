@@ -1,4 +1,4 @@
-<h2>Products</h2>
+<h1>Products</h1>
 
 
 <!-- 
@@ -8,7 +8,7 @@ can be found in the LICENSE file at http://angular.io/license
 -->
 
 <div *ngFor="let product of products; index as productId">
-  <h3>
+  <h3 style="border-bottom: 2px dotted">
      <a [title]="product.name + ' details'"
         [routerLink]="['/products',productId]">
         {{product.name}}        
@@ -16,9 +16,11 @@ can be found in the LICENSE file at http://angular.io/license
      <p *ngIf="product.description">
         Description: {{product.description}}
      </p>     
-     <button (click)="share(product)">
+     <p>
+       <a (click)="share(product)">
        Share
-     </button>
+       </a>
+     </p> 
      <app-product-alerts
       [product]="product"
       (notify)="onNotify(product)">
